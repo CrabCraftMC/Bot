@@ -344,6 +344,15 @@ Client.on("interactionCreate", async (interaction: Interaction) => {
         });
         interaction.reply({ embeds: [whitelistedEmbed], ephemeral: true });
       }, console.error);
+
+    const memberRole = interaction.guild?.roles.cache.get(
+      process.env.CC_ROLE_ID!
+    );
+    const member = interaction.guild?.members.cache.get(interaction.user.id);
+
+    if (memberRole && member) {
+      member.roles.add(memberRole);
+    }
   }
 });
 
