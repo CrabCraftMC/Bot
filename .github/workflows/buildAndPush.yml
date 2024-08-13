@@ -55,7 +55,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ghcr.io/connect-services/discord-bot:latest
+          tags: ghcr.io/CrabCraftMC/Bot:latest
           platforms: linux/amd64
           build-args: COMMIT_HASH=${{ github.sha }}
           context: .
