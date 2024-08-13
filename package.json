@@ -8,8 +8,6 @@
     "typescript": "^5.5.4"
   },
   "name": "bot",
-  "module": "index.ts",
-  "type": "module",
   "scripts": {
     "build": "npx tsc",
     "dev": "bun ./src/index.ts"
