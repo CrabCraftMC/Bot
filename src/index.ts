@@ -301,7 +301,9 @@ Client.on("interactionCreate", async (interaction: Interaction) => {
           matchingRow?.set("Favourite Wood", favouriteWood);
           await matchingRow?.save();
         });
-        interaction.channel?.send({ embeds: [whitelistedEmbed] });
+        (interaction.channel as TextChannel)?.send({
+          embeds: [whitelistedEmbed],
+        });
       }, console.error);
 
     const memberRole = interaction.guild?.roles.cache.get(
