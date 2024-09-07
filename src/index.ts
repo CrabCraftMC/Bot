@@ -180,6 +180,10 @@ Client.on("interactionCreate", async (interaction: Interaction) => {
     process.env.LOG_CHANNEL_ID!
   ) as TextChannel;
 
+  const genChannel = interaction.guild?.channels.cache.get(
+    process.env.GEN_CHANNEL_ID!
+  ) as TextChannel;
+
   if (interaction.customId == "application-modal") {
     const age = interaction.fields.getTextInputValue("age").toLocaleLowerCase();
     const minecraftUsername =
@@ -278,6 +282,11 @@ Client.on("interactionCreate", async (interaction: Interaction) => {
         logChannel.send(
           `**${interaction.user.tag} (${minecraftUsername}) has been whitelisted!**`
         );
+
+        genChannel.send(
+          `> **Welcome to CrabCraft Season 3 ${interaction.user}!** 🦀🎉`
+        );
+
         doc.loadInfo().then(async () => {
           const rows = await doc.sheetsByIndex[0].getRows();
           const matchingRow = rows.find(
