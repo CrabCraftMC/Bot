@@ -16,9 +16,11 @@ export const client = new Client({
     GatewayIntentBits.GuildMessages,
     GatewayIntentBits.Guilds,
     GatewayIntentBits.MessageContent,
+    GatewayIntentBits.GuildMembers,
+    GatewayIntentBits.GuildPresences,
   ],
   allowedMentions: {
-    parse: ["everyone", "roles"],
+    parse: ["roles", "users"],
   },
 });
 
@@ -30,3 +32,12 @@ logger.info("Loading events...");
 await loadEvents();
 
 client.login(config.TOKEN);
+
+// Handle unhandled promise rejections
+process.on("unhandledRejection", (error) => {
+  logger.error("Unhandled promise rejection:", error);
+});
+// Handle uncaught exceptions
+process.on("uncaughtException", (error) => {
+  logger.error("Uncaught exception:", error);
+});
