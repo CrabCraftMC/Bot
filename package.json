@@ -1,11 +1,21 @@
 {
-  "name": "bot",
-  "scripts": {
-    "build": "npx tsc",
-    "dev": "bun ./src/index.ts"
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5",
+    "meilisearch": "^0.38.0",
+    "winston": "^3.13.0"
   },
   "devDependencies": {
-    "@types/bun": "latest",
-    "ts-node": "^10.9.2"
+    "@types/bun": "latest"
+  },
+  "scripts": {
+    "dev": "bun ./src/index.ts --watch"
+  },
+  "name": "bot",
+  "module": "index.ts",
+  "type": "module",
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   }
 }
