@@ -3,6 +3,8 @@
     "chalk": "^5.3.0",
     "discord.js": "^14.16.3",
     "dotenv": "^16.4.5",
+    "google-auth-library": "^9.15.0",
+    "google-spreadsheet": "^4.1.4",
     "mariadb": "^3.4.0",
     "meilisearch": "^0.38.0",
     "winston": "^3.13.0"
@@ -11,7 +13,8 @@
     "@types/bun": "latest"
   },
   "scripts": {
-    "dev": "bun ./src/index.ts --watch"
+    "dev": "bun ./src/index.ts --watch",
+    "build": "tsc --build"
   },
   "name": "bot",
   "module": "index.ts",
