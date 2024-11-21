@@ -3,7 +3,7 @@ name: Build & Push Docker
 on:
   # On push to main
   push:
-    branches: ["main"]
+    branches: ["main", "v2"]
 
   # On pull request to main
   # pull_request:
