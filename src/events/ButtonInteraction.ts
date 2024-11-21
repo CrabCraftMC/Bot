@@ -85,6 +85,25 @@ export default class ChatInteractionEvent extends Event {
     }
 
     if (interaction.customId == "fast-apply") {
+      const applicationModal = new ModalBuilder()
+        .setCustomId("fast-application")
+        .setTitle("Season 4 Application");
+
+      const minecraftUsername = new TextInputBuilder()
+        .setCustomId("minecraft-username")
+        .setLabel("Minecraft Username")
+        .setPlaceholder("Notch")
+        .setRequired(true)
+        .setStyle(TextInputStyle.Short);
+
+      const firstActionRow =
+        new ActionRowBuilder<TextInputBuilder>().addComponents(
+          minecraftUsername
+        );
+
+      applicationModal.addComponents(firstActionRow);
+
+      await interaction.showModal(applicationModal);
     }
   }
 }

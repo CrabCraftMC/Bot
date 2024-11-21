@@ -1,5 +1,6 @@
 import Event from "@/structures/Event";
 import config from "@/utils/config";
+import Sheet from "@/utils/sheet";
 import { TextChannel, type GuildMember } from "discord.js";
 
 import mariadb from "mariadb";
@@ -12,6 +13,8 @@ const pool = mariadb.createPool({
   database: config.DB_NAME,
   connectionLimit: 5,
 });
+
+const sheet = new Sheet();
 
 export default class ChatInteractionEvent extends Event {
   constructor() {
@@ -46,5 +49,7 @@ export default class ChatInteractionEvent extends Event {
     logChannel.send({
       content: `<:PlayerLeft:1251574076061913179> ${member.user.tag} (<@!${member.user.id}>) left the server. Removed player \`${player["name"]}\` from the database.`,
     });
+
+    sheet.inactiveUser(member.user.id);
   }
 }
