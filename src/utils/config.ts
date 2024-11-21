@@ -12,6 +12,10 @@ interface IConfig {
   APPLICATION_CATEGORY_ID: string;
   MEMBER_ROLE_ID: string;
 
+  GOOGLE_SHEET_ID: string;
+  GOOGLE_SERVICE_ACCOUNT_EMAIL: string;
+  GOOGLE_SERVICE_ACCOUNT_KEY: string;
+
   DB_HOST: string;
   DB_PORT: string;
   DB_USER: string;
