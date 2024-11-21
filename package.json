@@ -1,19 +1,25 @@
 {
   "dependencies": {
-    "discord.js": "^14.15.3",
+    "chalk": "^5.3.0",
+    "discord.js": "^14.16.3",
     "dotenv": "^16.4.5",
-    "google-auth-library": "^9.13.0",
-    "google-spreadsheet": "^4.1.2",
-    "rcon-ts": "^1.2.3",
-    "typescript": "^5.5.4"
-  },
-  "name": "bot",
-  "scripts": {
-    "build": "npx tsc",
-    "dev": "bun ./src/index.ts"
+    "google-auth-library": "^9.15.0",
+    "google-spreadsheet": "^4.1.4",
+    "mariadb": "^3.4.0",
+    "meilisearch": "^0.38.0",
+    "winston": "^3.13.0"
   },
   "devDependencies": {
-    "@types/bun": "latest",
-    "ts-node": "^10.9.2"
+    "@types/bun": "latest"
+  },
+  "scripts": {
+    "dev": "bun ./src/index.ts --watch",
+    "build": "tsc --build"
+  },
+  "name": "bot",
+  "module": "index.ts",
+  "type": "module",
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   }
 }
