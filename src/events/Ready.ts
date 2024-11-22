@@ -1,9 +1,9 @@
-import logger from "@/utils/logger";
+import logger from "../utils/logger.js";
 import { Routes, SlashCommandBuilder, type Client } from "discord.js";
-import Event from "@/structures/Event";
-import { start } from "..";
-import config from "@/utils/config";
-import { commands } from "..";
+import Event from "../structures/Event.js";
+import { start } from "../index.js";
+import config from "../utils/config.js";
+import { commands } from "../index.js";
 
 export default class ReadyEvent extends Event {
   constructor() {

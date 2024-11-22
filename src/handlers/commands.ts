@@ -1,8 +1,14 @@
 import fs from "fs";
 import path from "path";
-import { commands } from "@/index";
-import type SlashCommand from "@/structures/SlashCommand";
-import logger from "@/utils/logger";
+import { commands } from "../index.js";
+import type SlashCommand from "../structures/SlashCommand.js";
+import logger from "../utils/logger.js";
+
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export const loadCommands = (): Promise<void> => {
   return new Promise<void>((resolve, reject) => {

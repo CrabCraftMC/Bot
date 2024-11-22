@@ -1,5 +1,5 @@
-import SlashCommand from "@/structures/SlashCommand";
-import { primaryEmbed } from "@/utils/embeds";
+import SlashCommand from "../../structures/SlashCommand.js";
+import { primaryEmbed } from "../../utils/embeds.js";
 import type { ChatInputCommandInteraction } from "discord.js";
 
 export default class PingCommand extends SlashCommand {

@@ -1,8 +1,8 @@
 import type { ChatInputCommandInteraction } from "discord.js";
-import { commands } from "..";
-import Event from "@/structures/Event";
-import logger from "@/utils/logger";
-import { errorEmbed } from "@/utils/embeds";
+import { commands } from "../index.js";
+import Event from "../structures/Event.js";
+import logger from "../utils/logger.js";
+import { errorEmbed } from "../utils/embeds.js";
 
 export default class ChatInteractionEvent extends Event {
   constructor() {

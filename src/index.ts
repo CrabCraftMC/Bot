@@ -1,13 +1,13 @@
 import { Client, Collection, GatewayIntentBits } from "discord.js";
-import logger from "@/utils/logger";
-import config from "@/utils/config";
+import logger from "./utils/logger.js";
+import config from "./utils/config.js";
 
 logger.info("Starting Crabby...");
 
-import { loadCommands } from "./handlers/commands";
-import { loadEvents } from "./handlers/events";
+import { loadCommands } from "./handlers/commands.js";
+import { loadEvents } from "./handlers/events.js";
 
-import type SlashCommand from "@/structures/SlashCommand";
+import type SlashCommand from "./structures/SlashCommand.js";
 
 export const start = Date.now();
 
@@ -26,10 +26,12 @@ export const client = new Client({
 
 export const commands: Collection<string, SlashCommand> = new Collection();
 
-logger.info("Loading commands...");
-await loadCommands();
-logger.info("Loading events...");
-await loadEvents();
+(async () => {
+  logger.info("Loading commands...");
+  await loadCommands();
+  logger.info("Loading events...");
+  await loadEvents();
+})();
 
 client.login(config.TOKEN);
 

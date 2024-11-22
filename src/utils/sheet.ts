@@ -1,6 +1,6 @@
 import { JWT } from "google-auth-library";
 import { GoogleSpreadsheet } from "google-spreadsheet";
-import config from "./config";
+import config from "./config.js";
 
 const SCOPES = [
   "https://www.googleapis.com/auth/spreadsheets",

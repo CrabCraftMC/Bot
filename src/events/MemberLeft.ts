@@ -1,6 +1,6 @@
-import Event from "@/structures/Event";
-import config from "@/utils/config";
-import Sheet from "@/utils/sheet";
+import Event from "../structures/Event.js";
+import config from "../utils/config.js";
+import Sheet from "../utils/sheet.js";
 import { TextChannel, type GuildMember } from "discord.js";
 
 import mariadb from "mariadb";
@@ -47,7 +47,7 @@ export default class ChatInteractionEvent extends Event {
     ).then((res) => res.json())) as Record<string, string>;
 
     logChannel.send({
-      content: `<:PlayerLeft:1251574076061913179> ${member.user.tag} (<@!${member.user.id}>) left the server. Removed player \`${player["name"]}\` from the database.`,
+      content: `<:PlayerLeft:1251574076061913179> ${member.user.tag} (<..!${member.user.id}>) left the server. Removed player \`${player["name"]}\` from the database.`,
     });
 
     sheet.inactiveUser(member.user.id);
