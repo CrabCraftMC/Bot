@@ -20,7 +20,7 @@ export const client = new Client({
     GatewayIntentBits.GuildPresences,
   ],
   allowedMentions: {
-    parse: ["roles", "users"],
+    parse: ["users"],
   },
 });
 
