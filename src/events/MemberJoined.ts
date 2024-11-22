@@ -1,6 +1,6 @@
-import Event from "@/structures/Event";
-import config from "@/utils/config";
-import { primaryEmbed } from "@/utils/embeds";
+import Event from "../structures/Event.js";
+import config from "../utils/config.js";
+import { primaryEmbed } from "../utils/embeds.js";
 import {
   ActionRowBuilder,
   ButtonBuilder,
@@ -45,7 +45,7 @@ export default class ChatInteractionEvent extends Event {
       });
 
       channel.send({
-        content: `<@!${member.user.id}>`,
+        content: `<..!${member.user.id}>`,
       });
       return;
     }
@@ -64,7 +64,7 @@ export default class ChatInteractionEvent extends Event {
     );
 
     channel.send({
-      content: `<@!${member.user.id}>`,
+      content: `<..!${member.user.id}>`,
       embeds: [applicationEmbed],
       components: [applyButton],
     });

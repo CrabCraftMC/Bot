@@ -1,8 +1,14 @@
-import type Event from "@/structures/Event";
-import logger from "@/utils/logger";
+import type Event from "../structures/Event.js";
+import logger from "../utils/logger.js";
 import fs from "fs";
 import path from "path";
-import { client } from "@/index";
+import { client } from "../index.js";
+
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export const loadEvents = (): Promise<void> => {
   return new Promise<void>((resolve, reject) => {
@@ -16,7 +22,7 @@ export const loadEvents = (): Promise<void> => {
           )
             continue;
 
-          const eventModule = await import(`@/events/${eventFile}`);
+          const eventModule = await import(`../events/${eventFile}`);
           const event: Event = new eventModule.default();
 
           event.register(client);

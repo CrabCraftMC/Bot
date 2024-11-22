@@ -1,5 +1,5 @@
-import SlashCommand from "@/structures/SlashCommand";
-import { primaryEmbed } from "@/utils/embeds";
+import SlashCommand from "../../structures/SlashCommand.js";
+import { primaryEmbed } from "../../utils/embeds.js";
 import {
   ActionRowBuilder,
   ButtonBuilder,

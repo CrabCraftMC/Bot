@@ -14,7 +14,7 @@
   },
   "scripts": {
     "dev": "bun ./src/index.ts --watch",
-    "build": "tsc --build"
+    "build": "tsc --project tsconfig.json"
   },
   "name": "bot",
   "module": "index.ts",

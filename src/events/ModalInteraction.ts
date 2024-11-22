@@ -1,7 +1,7 @@
-import Event from "@/structures/Event";
-import config from "@/utils/config";
-import { errorEmbed, primaryEmbed } from "@/utils/embeds";
-import Sheet from "@/utils/sheet";
+import Event from "../structures/Event.js";
+import config from "../utils/config.js";
+import { errorEmbed, primaryEmbed } from "../utils/embeds.js";
+import Sheet from "../utils/sheet.js";
 import type {
   GuildMember,
   ModalSubmitInteraction,
