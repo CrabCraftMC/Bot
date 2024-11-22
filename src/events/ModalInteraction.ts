@@ -138,9 +138,7 @@ export default class ChatInteractionEvent extends Event {
         20
       )}-${usersUUID["id"].slice(20)}`;
 
-      const conn = await pool.getConnection();
-
-      const rows = await conn.query(
+      const rows = await pool.query(
         `SELECT * FROM discordsrv_accounts WHERE uuid = '${UUID}' OR discord = '${interaction.user.id}'`
       );
 
@@ -189,7 +187,7 @@ export default class ChatInteractionEvent extends Event {
         embeds: [submittedApplicationEmbed],
       });
 
-      conn.query(
+      pool.query(
         `INSERT INTO discordsrv_accounts (uuid, discord) VALUES ('${UUID}', '${interaction.user.id}')`
       );
 
@@ -237,8 +235,6 @@ export default class ChatInteractionEvent extends Event {
         joinReason: joinReason,
         favouriteWood: favouriteWood,
       });
-
-      conn.end();
 
       return;
     }
@@ -302,9 +298,7 @@ export default class ChatInteractionEvent extends Event {
         20
       )}-${usersUUID["id"].slice(20)}`;
 
-      const conn = await pool.getConnection();
-
-      const rows = await conn.query(
+      const rows = await pool.query(
         `SELECT * FROM discordsrv_accounts WHERE uuid = '${UUID}' OR discord = '${interaction.user.id}'`
       );
 
@@ -345,7 +339,7 @@ export default class ChatInteractionEvent extends Event {
         ephemeral: true,
       });
 
-      conn.query(
+      pool.query(
         `INSERT INTO discordsrv_accounts (uuid, discord) VALUES ('${UUID}', '${interaction.user.id}')`
       );
 
@@ -364,8 +358,6 @@ export default class ChatInteractionEvent extends Event {
         joinReason: "",
         favouriteWood: "",
       });
-
-      conn.end();
 
       return;
     }
