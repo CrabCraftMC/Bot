@@ -64,7 +64,7 @@ export default class ChatInteractionEvent extends Event {
     );
 
     channel.send({
-      content: `<..!${member.user.id}>`,
+      content: `<@!${member.user.id}>`,
       embeds: [applicationEmbed],
       components: [applyButton],
     });
