@@ -203,7 +203,7 @@ export default class ChatInteractionEvent extends Event {
             .addFields([
               {
                 name: "Connection Information",
-                value: `**Server IP:** \`cc.mxuk.me\`\n**Version:** \`1.21.3\``,
+                value: `**Server IP:** \`crabcraft.net\`\n**Version:** \`1.21.3\``,
               },
             ]),
         ],
