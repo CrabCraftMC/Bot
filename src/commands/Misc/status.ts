@@ -15,11 +15,11 @@ export default class StatusCommand extends SlashCommand {
       (emoji) => emoji.name === "loading"
     );
     await interaction.reply({
-      content: `${emoji} Pinging \`cc.mxuk.me\`...`,
+      content: `${emoji} Pinging \`crabcraft.net\`...`,
     });
 
     const serverInfo = await fetch(
-      "https://api.mcsrvstat.us/2/cc.mxuk.me"
+      "https://api.mcsrvstat.us/2/crabcraft.net"
     ).then((res) => res.json());
 
     await interaction.editReply({
@@ -38,7 +38,7 @@ export default class StatusCommand extends SlashCommand {
               : "No players connected",
           })
           .setAuthor({
-            name: "cc.mxuk.me",
+            name: "crabcraft.net",
             iconURL: interaction.guild?.iconURL()!,
           }),
       ],
