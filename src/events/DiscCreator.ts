@@ -79,7 +79,7 @@ export default class ChatInteractionEvent extends Event {
         embeds: [
           primaryEmbed(
             "💿 Disc Creator",
-            `Copy and paste the commands below to create a custom music disc in-game.\n\n**1.** \`/cd download ${attachment.url} ${UID}.${fileExtension}\`\n\n**2.** \`/cd create ${UID}.${fileExtension} "REPLACE WITH DISC NAME"\``
+            `Copy and paste the commands below to create a custom music disc in-game.\n\n\`/cd download "${attachment.url}" ${UID}.${fileExtension}\`\n\n\`/cd create ${UID}.${fileExtension} "REPLACE WITH DISC NAME"\``
           ),
         ],
       })
